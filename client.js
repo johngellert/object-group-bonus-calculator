@@ -36,8 +36,15 @@ const employees = [
 //   console.log(employee);
 // }
 
+// Everything commented out below is the code that our team was working on together
+// At the end of the day, the code was not running how we wanted it to
+// With our first attemp, I started to get confused with the layout
+// I tried writing the code again using const and conditional like we learned in class
+// Not sure if this is any cleaner but I am getting it to work correctly now.
 
-for(employee of employees){
+
+// for loop to iterate through the emoplyee information
+for (employee of employees) {
   console.log(employeeBonus(employee));
 }
 
@@ -53,8 +60,8 @@ function employeeBonus(employeeInfoX) {
   let employee = {
     name: employeeInfoX.name,
     bonusPercentage: percentBonus + '%',
-    totalCompensation: percentBonusDecimal *  parseInt(employeeInfoX.annualSalary) + parseInt(employeeInfoX.annualSalary),
-    totalBonus: (finalBonus(employeeInfoX) / 100) *   parseInt(employeeInfoX.annualSalary)
+    totalCompensation: percentBonusDecimal * parseInt(employeeInfoX.annualSalary) + parseInt(employeeInfoX.annualSalary),
+    totalBonus: (finalBonus(employeeInfoX) / 100) * parseInt(employeeInfoX.annualSalary)
   }
   return employee;
 }
@@ -80,32 +87,38 @@ function finalBonus(employeeInfoY) {
   if (noBonus) {
     percent = 0;
   }
-  else if(fourPercent){
+  else if (fourPercent) {
     percent = 4;
   }
-  else if (sixPercent){
+  else if (sixPercent) {
     percent = 6;
   }
-  else if (tenPercent){
+  else if (tenPercent) {
     percent = 10;
   }
 
-   // add five percent if the employee has been with the company for ober 15 years
-  if (addFive){
+  // add five percent if the employee has been with the company for ober 15 years
+  if (addFive) {
     percent += 5;
   }
 
   // set percent to 1 if current salary is over 65000
-  if(overSalaryCap){
+  if (overSalaryCap) {
     percent = 1;
   }
 
   // set percent to 13 if greater than 13
-  if (overBonusCap){
+  if (overBonusCap) {
     percent = 13;
   }
 
-  return percent;
+  // only return if the percent is less than 13 and greater than 0
+  if (percent <= 13 && percent >= 0) {
+    return percent;
+  }
+  else {
+    return "bonus outside range";
+  }
 } // end finalBonus
 
 
