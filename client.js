@@ -48,10 +48,10 @@ for (employee of employees) {
   console.log(employeeBonus(employee));
 }
 
-// declare employeeBonus function that accepts and employee object
+// declare employeeBonus function that accepts an employee object
 // creates a new object with the employees bonus
-// @para employeeInfo    an employee object
-// @return               a new object with bonus info
+// @para employeeInfoX    an employee object
+// @return                a new object with bonus info
 function employeeBonus(employeeInfoX) {
   const percentBonus = finalBonus(employeeInfoX);
   const percentBonusDecimal = percentBonus / 100;
@@ -66,6 +66,10 @@ function employeeBonus(employeeInfoX) {
   return employee;
 }
 
+// declare finalBonus functin that accpets an object
+// calculates the bonus for employees
+// @para employeeInfoY    an object with employee informaiton
+// @return                a number representing the employees bonus percentage
 function finalBonus(employeeInfoY) {
   let percent = 0;
   // bonus percent based on review
@@ -74,16 +78,16 @@ function finalBonus(employeeInfoY) {
   const sixPercent = employeeInfoY.reviewRating === 4;
   const tenPercent = employeeInfoY.reviewRating === 5;
 
-  // bonus percent based on tennur greater than 15 years
+  // bonus percent based on tenure greater than 15 years
   const addFive = employeeInfoY.employeeNumber.length === 4;
 
   // bonus percent based on salary cap of 65,000
   const overSalaryCap = employeeInfoY.annualSalary > 65000;
 
-  // bonus percent based on bonus cap of 13%
+  // bonus percent based on bonus percentage cap of 13%
   const overBonusCap = percent > 13;
 
-  // set percent based on employee review rating
+  // set percent variable based on employee review rating
   if (noBonus) {
     percent = 0;
   }
@@ -97,7 +101,7 @@ function finalBonus(employeeInfoY) {
     percent = 10;
   }
 
-  // add five percent if the employee has been with the company for ober 15 years
+  // add five percent if the employee has been with the company for over 15 years
   if (addFive) {
     percent += 5;
   }
@@ -107,7 +111,7 @@ function finalBonus(employeeInfoY) {
     percent = 1;
   }
 
-  // set percent to 13 if greater than 13
+  // set percent to 13 if the percent variable is greater than 13
   if (overBonusCap) {
     percent = 13;
   }
@@ -121,6 +125,7 @@ function finalBonus(employeeInfoY) {
   }
 } // end finalBonus
 
+console.log( employees );
 
 
 
