@@ -40,7 +40,7 @@ const employees = [
 // At the end of the day, the code was not running how we wanted it to
 // With our first attemp, I started to get confused with the layout
 // I tried writing the code again using const and conditional like we learned in class
-// Not sure if this is any cleaner but I am getting it to work correctly now.
+// Not sure if this is any cleaner but the code is working correctly now
 
 
 // for loop to iterate through the emoplyee information
@@ -125,7 +125,9 @@ function finalBonus(employeeInfoY) {
 
 
 
-// initial code
+// INITIAL CODE FORM OUR TIME IN CLASS
+
+
 // function employeeBonus(employee) {
 //   percentCalc(employee);
 //   let emp = {
